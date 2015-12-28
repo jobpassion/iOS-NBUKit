@@ -116,7 +116,7 @@ NSString * const ObjectDeletedNotification = @"ObjectDeletedNotification";
         
         if (!_mask)
         {
-            _mask = [NSBundle loadNibNamed:@"ObjectViewMask"
+            _mask = [[NSBundle bundleForClass:[NBUKit class]] loadNibNamed:@"ObjectViewMask"
                                       owner:self
                                     options:nil][0];
             _mask.frame = self.bounds;

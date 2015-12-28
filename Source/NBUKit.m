@@ -29,7 +29,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^
     {
-        NSString * bundlePath = [[NSBundle mainBundle].bundlePath stringByAppendingPathComponent:@"NBUKit.bundle"];
+        NSString * bundlePath = [[NSBundle bundleForClass:[NBUKit class]].bundlePath stringByAppendingPathComponent:@"NBUKit.bundle"];
         _resourcesBundle = [NSBundle bundleWithPath:bundlePath];
     });
     

@@ -20,6 +20,7 @@
 
 #import "ObjectArrayView.h"
 #import "NBUKitPrivate.h"
+#import "NBUKit.h"
 
 // Define module
 #undef  NBUKIT_MODULE
@@ -243,7 +244,7 @@
 - (UIView *)dequeueOrLoadViewFromNib
 {
     // ** This class only loads from nib, implement dequeue in subclasses! **
-    return [NSBundle loadNibNamed:_nibNameForViews
+    return [[NSBundle bundleWithPath:[[NSBundle mainBundle].bundlePath stringByAppendingString:@"/Frameworks/NBUImagePicker.framework/NBUImagePicker.bundle"]] loadNibNamed:_nibNameForViews
                              owner:self
                            options:nil][0];
 }

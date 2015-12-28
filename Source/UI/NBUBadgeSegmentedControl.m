@@ -56,7 +56,7 @@
     NBUBadgeView * badge;
     for (NSUInteger i = 0; i < self.numberOfSegments; i++)
     {
-        badge = [NSBundle loadNibNamed:@"NBUBadgeView"
+        badge = [[NSBundle bundleForClass:[NBUKit class]] loadNibNamed:@"NBUBadgeView"
                                  owner:nil
                                options:nil][0];
         badge.value = nil;

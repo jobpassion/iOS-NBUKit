@@ -23,7 +23,7 @@
 
 + (NSString *)executableName
 {
-    NSString *executableName = [[[NSBundle mainBundle] executablePath] lastPathComponent];
+    NSString *executableName = [[[NSBundle bundleForClass:[NBUKit class]] executablePath] lastPathComponent];
     if (nil == executableName) {
         RKLogWarning(@"Unable to determine CFBundleExecutable: storing data under RestKit directory name.");
         executableName = @"RestKit";

@@ -74,7 +74,7 @@
             NSString * supportedInterfaceOrientationsKey = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?
                                                             @"UISupportedInterfaceOrientations" :
                                                             @"UISupportedInterfaceOrientations~ipad");
-            NSArray * orientations = [[NSBundle mainBundle] infoDictionary][supportedInterfaceOrientationsKey];
+            NSArray * orientations = [[NSBundle bundleForClass:[NBUKit class]] infoDictionary][supportedInterfaceOrientationsKey];
             NSUInteger mask = 0;
             for (NSString * orientation in orientations)
             {

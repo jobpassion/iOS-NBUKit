@@ -32,7 +32,7 @@
                           withTarget:(id)target
                               action:(SEL)action
 {
-    NBURefreshControl * control = [NSBundle loadNibNamed:nibName ? nibName : NSStringFromClass(self)
+    NBURefreshControl * control = [[NSBundle bundleForClass:[NBUKit class]] loadNibNamed:nibName ? nibName : NSStringFromClass(self)
                                                    owner:nil
                                                  options:nil][0];
     control.scrollView = scrollView;

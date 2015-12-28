@@ -21,22 +21,23 @@
 #import "UIApplication+NBUAdditions.h"
 #import "NBUKitPrivate.h"
 #import <Lockbox/Lockbox.h>
+#import "NBUKit.h"
 
 @implementation UIApplication (NBUAdditions)
 
 - (NSString *)applicationName
 {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"];
+    return [[NSBundle bundleForClass:[NBUKit class]] infoDictionary][@"CFBundleDisplayName"];
 }
 
 - (NSString *)applicationVersion
 {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    return [[NSBundle bundleForClass:[NBUKit class]] infoDictionary][@"CFBundleShortVersionString"];
 }
 
 - (NSString *)applicationBuild
 {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    return [[NSBundle bundleForClass:[NBUKit class]] infoDictionary][@"CFBundleVersion"];
 }
 
 - (NSURL *)documentsDirectory

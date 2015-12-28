@@ -29,7 +29,7 @@ NSString * const NBULocalizedStringNotFound = @"NBULocalizedStringNotFound";
                        ofType:(NSString *)extension
 {
     // First try with the main bundle
-    NSBundle * mainBundle = [NSBundle mainBundle];
+    NSBundle * mainBundle = [NSBundle bundleForClass:[NBUKit class]];
     NSString * path = [mainBundle pathForResource:name
                                            ofType:extension];
     if (path)
@@ -60,7 +60,7 @@ NSString * const NBULocalizedStringNotFound = @"NBULocalizedStringNotFound";
         return image;
     
     // Otherwise try with other bundles
-    for (NSString * bundlePath in [[NSBundle mainBundle] pathsForResourcesOfType:@"bundle"
+    for (NSString * bundlePath in [[NSBundle bundleForClass:[NBUKit class]] pathsForResourcesOfType:@"bundle"
                                                                      inDirectory:nil])
     {
         image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@", bundlePath.lastPathComponent, name]];
@@ -78,7 +78,7 @@ NSString * const NBULocalizedStringNotFound = @"NBULocalizedStringNotFound";
                   options:(NSDictionary *)options
 {
     // First try with the main bundle
-    NSBundle * mainBundle = [NSBundle mainBundle];
+    NSBundle * mainBundle = [NSBundle bundleForClass:[NBUKit class]];
     if ([mainBundle pathForResource:name
                              ofType:@"nib"])
     {
@@ -114,7 +114,7 @@ NSString * const NBULocalizedStringNotFound = @"NBULocalizedStringNotFound";
                        backupBundle:(NSBundle *)bundle
 {
     // First try main bundle
-    NSString * string = [[NSBundle mainBundle] localizedStringForKey:key
+    NSString * string = [[NSBundle bundleForClass:[NBUKit class]] localizedStringForKey:key
                                                                value:NBULocalizedStringNotFound
                                                                table:tableName];
     

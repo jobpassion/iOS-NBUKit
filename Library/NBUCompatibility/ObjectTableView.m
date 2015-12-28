@@ -432,7 +432,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
             // Create a model?
             if (!_modelView)
             {
-                _modelView = [NSBundle loadNibNamed:self.nibNameForViews
+                
+                _modelView = [[NSBundle bundleWithPath:[[NSBundle mainBundle].bundlePath stringByAppendingString:@"/Frameworks/NBUImagePicker.framework/NBUImagePicker.bundle"]] loadNibNamed:self.nibNameForViews
                                                owner:self
                                              options:nil][0];
             }

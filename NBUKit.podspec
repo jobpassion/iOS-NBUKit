@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'UI' do |sub|
         sub.source_files    = 'Source/UI/*.{h,m}', 'Library/NBUCompatibility/*.{h,m}'
-        sub.resource_bundle = { 'NBUKit' => ['Resources/*.{png,lproj}', 'Source/UI/*.{xib}'] }
+        sub.resources =  'Resources/*.{png,lproj}', 'Source/UI/*.{xib}'
         sub.frameworks      = 'MessageUI'
         sub.dependency      'NBUKit/Additions'
         sub.dependency      'NBUKit/Library/RestKitSupport'

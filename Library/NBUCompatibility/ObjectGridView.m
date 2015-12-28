@@ -743,7 +743,7 @@
     
     // Load a new one as a last resort
     //[_debug appendString:@"*"];
-    return [NSBundle loadNibNamed:self.nibNameForViews
+    return [[NSBundle bundleWithPath:[[NSBundle mainBundle].bundlePath stringByAppendingString:@"/Frameworks/NBUImagePicker.framework/NBUImagePicker.bundle"]] loadNibNamed:self.nibNameForViews
                              owner:self
                            options:nil][0];
 }

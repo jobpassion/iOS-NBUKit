@@ -88,7 +88,7 @@ static NSString * customBackButtonTitle;
         NBULogVerbose(@"Loading nib '%@' for class '%@'", nibName, NSStringFromClass([self class]));
         
         // Check if set with owner
-        NSArray * loadedObjects = [NSBundle loadNibNamed:nibName
+        NSArray * loadedObjects = [[NSBundle bundleForClass:[NBUKit class]] loadNibNamed:nibName
                                                    owner:self
                                                  options:nil];
         // Else set it to the first loaded object

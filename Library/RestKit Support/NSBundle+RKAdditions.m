@@ -41,7 +41,7 @@
     static BOOL searchedForBundle = NO;
 
     if (! searchedForBundle) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"RestKitResources" ofType:@"bundle"];
+        NSString *path = [[NSBundle bundleForClass:[NBUKit class]] pathForResource:@"RestKitResources" ofType:@"bundle"];
         searchedForBundle = YES;
         NSBundle *resourcesBundle = [NSBundle bundleWithPath:path];
         if (! resourcesBundle) RKLogWarning(@"Unable to find RestKitResources.bundle in your project. Did you forget to add it?");

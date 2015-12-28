@@ -226,7 +226,7 @@
 - (void)presentModalFromItemAtIndex:(NSUInteger)index
 {
 #ifdef NBUCOMPATIBILITY
-    ObjectSlideViewController * controller = [[NSBundle loadNibNamed:@"ObjectSlideViewController"
+    ObjectSlideViewController * controller = [[[NSBundle bundleForClass:[NBUKit class]] loadNibNamed:@"ObjectSlideViewController"
                                                                owner:nil
                                                              options:nil] objectAtIndex:0];
     controller.objectView.nibNameForViews = self.nibNameForViews;

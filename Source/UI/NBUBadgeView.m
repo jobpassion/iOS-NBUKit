@@ -31,7 +31,7 @@
 
 + (NBUBadgeView *)badge
 {
-    return [NSBundle loadNibNamed:@"NBUBadgeView"
+    return [[NSBundle bundleForClass:[NBUKit class]] loadNibNamed:@"NBUBadgeView"
                             owner:nil
                           options:nil][0];
 }
